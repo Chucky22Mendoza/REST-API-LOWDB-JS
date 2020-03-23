@@ -1,0 +1,20 @@
+{
+  "name": "rest-api-jspuro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js --ignore database.json",
+    "dev": "nodemon src/index.js --ignore database.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "lowdb": "^1.0.0",
+    "uuid": "^7.0.2"
+  }
+}
