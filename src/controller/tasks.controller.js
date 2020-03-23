@@ -88,6 +88,12 @@ const setResponseTaskHandler = (req, res, status, data) => {
     res.end();
 }
 
+const setErrorResponseTaskHandler = (req, res) => {
+    res.writeHead(404, {'Content-Type': 'application/json'});
+    res.write(JSON.stringify({ errorMessage: '404 NOT FOUND, ENTRÁ CAGÓN' }));
+    res.end();
+}
+
 const getSplitURL = (req) => {
     let { url } = req;
 
@@ -105,4 +111,5 @@ module.exports = {
     updateTaskHandler,
     deleteTaskHandler,
     setResponseTaskHandler,
+    setErrorResponseTaskHandler
 };

@@ -6,7 +6,7 @@ let db;
 async function createConnection() {
     const adapter = new FileAsync('database.json');
     db = await low(adapter);
-    db.defaults({tasks: []}).write();
+    db.defaults({ tasks: [] }).write();
 }
 
 const getConnection = () => db;
