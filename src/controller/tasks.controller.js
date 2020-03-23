@@ -12,7 +12,7 @@ const getTaskHandler = async (req, res) => {
         const { idKey, idValue } = getSplitURL(req);
 
         if (idKey === "id") {
-            const task = getConnection().get('tasks').find({id: idValue}).value();
+            const task = getConnection().get('tasks').find({ id: idValue }).value();
             setResponseTaskHandler(req, res, 200, task);
         } else {
             let errorMessage = "INVALID QUERY";
@@ -49,7 +49,7 @@ const updateTaskHandler = async (req, res) => {
         if (idKey === "id") {
             await bodyParser(req);
 
-            const result = await getConnection().get('tasks').find({id: idValue})
+            const result = await getConnection().get('tasks').find({ id: idValue })
                 .assign(req.body)
                 .write();
 
@@ -69,7 +69,7 @@ const deleteTaskHandler = async (req, res) => {
         const { idKey, idValue } = getSplitURL(req);
 
         if (idKey === "id") {
-            const result = getConnection().get('tasks').remove({id: idValue}).write();
+            const result = getConnection().get('tasks').remove({ id: idValue }).write();
             let successMessage = "Deleted successfully";
             setResponseTaskHandler(req, res, 200, { successMessage });
         } else {
